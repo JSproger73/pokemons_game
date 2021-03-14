@@ -162,6 +162,7 @@ function App() {
           {POKEMONS.map((item) => (
             <PokemonCard
               key={item.id}
+              id={item.id}
               name={item.name}
               img={item.img}
               type={item.type}
