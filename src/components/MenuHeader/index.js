@@ -3,10 +3,10 @@ import Navbar from "./Navbar";
 
 const MenuHeader = () => {
   return (
-    <>
+    <MenuHeader>
       <Menu />
       <Navbar />
-    </>
+    </MenuHeader>
   );
 };
 

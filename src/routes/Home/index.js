@@ -131,13 +131,16 @@ const POKEMONS = [
   },
 ];
 
-function HomePage({ onChangePage }) {
+function HomePage({ onChangePage, onChangePage2 }) {
   const handleClickButton = (page) => {
     onChangePage && onChangePage(page);
   };
+  const handleClickNavButton = (isActive) => {
+    onChangePage2 && onChangePage2(isActive);
+  };
   return (
     <>
-      <MenuHeader />
+      <MenuHeader onClickNavButton={handleClickNavButton} />
       <Headerblock
         title="This is check title header"
         descr="This is check description header"
