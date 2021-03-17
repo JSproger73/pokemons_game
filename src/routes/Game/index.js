@@ -1,7 +1,22 @@
-const GamePage = ({ onChangePage2 }) => {
+import MenuHeader from "../../components/MenuHeader";
+
+import cn from "classnames";
+
+import style from "../Game/style.module.css";
+
+const GamePage = ({ onChangePage }) => {
+  const handleClickButton = () => {
+    onChangePage && onChangePage("app");
+  };
+
   return (
     <div>
-      <button onClick={onChangePage2}>Home page</button>
+      <MenuHeader bgActive={true} />
+      <div className={cn(style.container)}>
+        <button onClick={handleClickButton} className={cn(style.buttonHome)}>
+          Home page
+        </button>
+      </div>
     </div>
   );
 };

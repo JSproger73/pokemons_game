@@ -131,7 +131,7 @@ const POKEMONS = [
   },
 ];
 
-function HomePage({ onChangePage, onChangePage2 }) {
+function HomePage({ onChangePage }) {
   const handleClickButton = (page) => {
     onChangePage && onChangePage(page);
   };

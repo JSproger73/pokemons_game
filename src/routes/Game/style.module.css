@@ -1,5 +1,12 @@
-button,
-button:visited {
+.container{
+    margin: 0 auto;
+    max-width: 240px;
+}
+.buttonHome {
+    margin: 100px auto;
+}
+
+.buttonHome:visited {
     width: 100%;
     max-width: 240px;
     padding: 1rem;
@@ -13,8 +20,7 @@ button:visited {
     box-sizing: border-box;
 }
 
-button,
-button:visited {
+.buttonHome:visited {
     background: #f300b4;
     border: 1px solid transparent;
     color: #fafafa;
@@ -22,7 +28,7 @@ button:visited {
     outline: none;
 }
 
-button:hover {
+.buttonHome:hover {
     background: transparent;
     border: 1px solid #f300b4;
     color: #f300b4;
@@ -30,7 +36,7 @@ button:hover {
     outline: none;
 }
 
-button:active {
+.buttonHome:active {
     background: transparent;
     border: 1px solid #f300b4;
     color: #f300b4;
@@ -41,12 +47,12 @@ button:active {
     border-right: 2px solid;
 }
 
-button:disabled {
+.buttonHome:disabled {
     opacity: .4;
     cursor: not-allowed;
 }
 
-button:disabled:hover {
+.buttonHome:disabled:hover {
     background: #f300b4;
     border: 1px solid transparent;
     color: #fafafa;
