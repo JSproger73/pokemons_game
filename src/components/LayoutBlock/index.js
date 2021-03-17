@@ -1,3 +1,5 @@
+import cn from "classnames";
+
 import style from "./style.module.css";
 
 function LayoutBlock({ title, urlBg, colorBg, children }) {
@@ -7,14 +9,14 @@ function LayoutBlock({ title, urlBg, colorBg, children }) {
   };
 
   return (
-    <section className={style.root} style={styleLayout}>
-      <div className={style.wrapper}>
+    <section className={cn(style.root)} style={styleLayout}>
+      <div className={cn(style.wrapper)}>
         <article>
-          <div className={style.title}>
+          <div className={cn(style.title)}>
             <h3>{title}</h3>
-            <span className={style.separator}></span>
+            <span className={cn(style.separator)}></span>
           </div>
-          <div className={`${style.desc} ${style.full}`}>{children}</div>
+          <div className={cn(style.desc, style.full)}>{children}</div>
         </article>
       </div>
     </section>

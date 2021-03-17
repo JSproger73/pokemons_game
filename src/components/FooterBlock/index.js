@@ -1,9 +1,11 @@
+import cn from "classnames";
+
 import style from "./style.module.css";
 
 function FooterBlock() {
   return (
     <footer>
-      <div className={style.wrapper}>
+      <div className={cn(style.wrapper)}>
         <h3>THANKS FOR VISITING</h3>
         <p>© 2021 #ReactMarathon.</p>
       </div>
