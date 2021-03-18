@@ -1,27 +1,28 @@
 import cn from "classnames";
+import { Link } from "react-router-dom";
 
 import style from "./style.module.css";
 
 const MENU = [
   {
     title: "HOME",
-    to: "#welcome",
+    to: "/",
   },
   {
     title: "GAME",
-    to: "#game",
+    to: "/game",
   },
   {
     title: "ABOUT",
-    to: "#about",
+    to: "/about",
   },
   {
     title: "CONTACT",
-    to: "#contact",
+    to: "/contact",
   },
 ];
 
-const Menu = ({ isOpen }) => {
+const Menu = ({ isOpen, onClickMenuButtonNav }) => {
   return (
     <div
       className={cn(style.menuContainer, {
@@ -29,12 +30,14 @@ const Menu = ({ isOpen }) => {
         [style.deactive]: isOpen === false,
       })}
     >
-      <div clasNames={cn(style.overlay)} />
+      <div className={cn(style.overlay)} />
       <div className={cn(style.menuItems)}>
         <ul>
-          {MENU.map(({ title, to }, id) => (
-            <li key={id}>
-              <a href={to}>{title}</a>
+          {MENU.map(({ title, to }, index) => (
+            <li key={index}>
+              <Link to={to} onClick={onClickMenuButtonNav}>
+                {title}
+              </Link>
             </li>
           ))}
         </ul>
