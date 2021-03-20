@@ -1,6 +1,5 @@
 import Headerblock from "../../components/HeaderBlock";
 import LayoutBlock from "../../components/LayoutBlock";
-import MenuHeader from "../../components/MenuHeader";
 
 import layoutBg from "../../assets/bg2.jpg";
 
@@ -11,7 +10,6 @@ function HomePage({ onChangePage }) {
 
   return (
     <>
-      <MenuHeader />
       <Headerblock
         title="This is check title header"
         descr="This is check description header"

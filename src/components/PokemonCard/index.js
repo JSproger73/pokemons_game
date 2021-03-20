@@ -14,7 +14,7 @@ function PokemonCard({
   isActive,
 }) {
   const handleClick = () => {
-    clickPokemonCard && clickPokemonCard();
+    clickPokemonCard && clickPokemonCard(id);
   };
 
   return (
