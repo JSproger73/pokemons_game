@@ -8,7 +8,7 @@ import database from "../../service/firebase";
 import style from "../Game/style.module.css";
 
 const GamePage = () => {
-  const [pokemons, setPokemons] = useState({});
+  const [pokemons, setPokemons] = useState("");
 
   useEffect(() => {
     database.ref("pokemons").once("value", (snapshot) => {
@@ -16,25 +16,44 @@ const GamePage = () => {
     });
   }, []);
 
-  const handleClickButton = () => {};
+  const addPokemon = () => {
+    const newKey = database.ref().child("pokemons").push().key;
+    database.ref("pokemons/" + newKey).set({
+      name: "NewPokemon",
+      id: Date.now(),
+      img:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png",
+      values: {
+        top: 6,
+        right: "A",
+        bottom: 2,
+        left: 8,
+      },
+      active: true,
+      type: "poison",
+    });
+  };
 
   const clickPokemonCard = (id) => {
-    console.log("###ID :", id);
     setPokemons((prevState) => {
-      return Array.from(prevState, (item) => {
-        if (item.id === id) {
-          item.active = true;
+      return Object.entries(prevState).reduce((acc, item) => {
+        const pokemon = { ...item[1] };
+        if (pokemon.id === id) {
+          pokemon.active = true;
         }
-        return item;
-      });
+
+        acc[item[0]] = pokemon;
+
+        return acc;
+      }, {});
     });
   };
 
   return (
     <div>
       <div className={cn(style.container)}>
-        <button onClick={handleClickButton} className={cn(style.buttonHome)}>
-          Add pokemon
+        <button onClick={addPokemon} className={cn(style.buttonHome)}>
+          ADD NEW POKEMON
         </button>
       </div>
       <div className={style.flex}>
